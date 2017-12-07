@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js "></script>
+
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <title>Cargo Validator</title>
+</head>
+
+<body>
+
+
+    <div id="app">
+
+<div class="container-fluid">
+        <div class="hero-image">
+            <div class="heroText">
+                    <div class="validator-hdr">
+                        <a href="/"><button type="button" class="btn btn-primary validator-home-button">Home</button></a>
+                    </div>
+                    <h2 class="validatorText">Steve's Amazing Cargo Validator</h2>
+                    <button v-on:click="validateData(products)">Validate Me!</button>
+                    <div>
+                        <p>{{message}}</p>
+                        <p v-bind:class="updatedisplay"><strong>Total Price: $ </strong>{{calcTotalPrice}}.00</p>
+
+                        <p v-bind:class="updatedisplay"><strong>Weight Total: </strong>{{calcTotalWeight}} pounds</p>
+                    </div>
+        </div>
+
+        <div class="formHolder2" v-for="prod in products " :link="prod" v-bind:key="prod.prod_id">
+            <div id="cargoForm">
+                <h2>{{prod.name}}</h2>
+
+                <p class="product-Desc-Display ">{{prod.description}} <br>Count: {{prod.count}} | Cost:${{prod.cost}} | Weight: {{prod.weight}}
+                </p>
+
+                <p><strong><h3 class="salesTag "></h3></strong></p>
+
+                <button class="btn btn-outline-primary btn-lg" v-on:click="increaseCount(prod)" v-bind:disabled="isButtonDisabled">Gimme one!</button>
+
+                <button class="btn btn-outline-danger btn-lg" v-on:click="decreaseCount(prod)" v-bind:disabled="isRemoveBtnDisabled">I don't want this anymore!</button>
+            </div>
+
+            <div class="productImageDisplay ">
+                <img :src="prod.imgUrl" />
+            </div>
+
+
+
+
+            
+            </div>
+        </div>
+</div>
+
+    </body>
+
+
+    <script type="text/javascript" src="/js/cargo-validator.js"></script>
+
+
+    </html>

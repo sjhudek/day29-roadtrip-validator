@@ -1,0 +1,95 @@
+html {
+    min-width: 375px;
+}
+
+body {
+    font-family: sans-serif;
+    min-width: 375px;
+}
+
+header {
+    text-align: center;
+}
+
+.button-row {
+  margin-top: 175px;
+  margin-left: 75px;
+}
+
+header button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 25px 40px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+header h2 {
+    margin-top: 60px;
+}
+
+.hero-image {
+    background-image: url("/public/img/pexels-beach.jpg");
+}
+
+.heroText {
+    text-align: center;
+    width: 90%;
+    padding: 12px;
+    font-size: 18px;
+    margin-left: 70px;
+}
+
+.formHolder2 {
+    background-color: white;
+    border: 3px solid #0B33DB;
+    border-radius: 12px;
+    width: 90%;
+    font-size: 14px;
+    padding: 5px;
+    margin: 15px auto;
+    display: flex;
+}
+
+
+.productImageDisplay img {
+    width: 200px;
+    margin-right: 10px;
+    border-radius: 6px;
+
+}
+
+.validatorText {
+    text-align: center;
+}
+
+.product-Desc-Display {
+    font-size: 18px;
+    padding: 3px;
+}
+
+.salesTag {
+    margin-left: 10px;
+    font-size: 24px;
+    color: yellow;
+
+}
+
+
+#cargoForm {
+    margin: 5px;
+    padding: 10px;
+    border-radius: 6px;
+    width: 70%;
+}
+
+.remove-btn {
+    background-color: red;
+}
+
+.updateDisplayFont {
+    color: red;
+}
